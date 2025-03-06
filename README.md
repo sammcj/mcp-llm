@@ -1,4 +1,5 @@
 # MCP LLM
+[![smithery badge](https://smithery.ai/badge/@sammcj/mcp-llm)](https://smithery.ai/server/@sammcj/mcp-llm)
 
 An MCP server that provides access to LLMs using the LlamaIndexTS library.
 
@@ -18,72 +19,15 @@ This MCP server provides the following tools:
 
 ## Installation
 
-Update your MCP config to add the mcp-llm server:
+### Installing via Smithery
 
-```json
-{
-  "mcpServers": {
-    "llm": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-llm"
-      ],
-      "env": {
-        "LLM_MODEL_NAME": "deepseek-r1:7b-qwen-distill-q6_k_l",
-        "LLM_MODEL_PROVIDER": "ollama",
-        "LLM_BASE_URL": "http://localhost:11434",
-        "LLM_ALLOW_FILE_WRITE": "true",
-        "LLM_TIMEOUT_S": "240"
-      },
-      "disabled": false,
-      "autoApprove": [
-        "generate_code",
-        "generate_documentation",
-        "ask_question",
-        "generate_code_to_file"
-      ],
-      "timeout": 300
-    },
-  }
-}
+To install LLM Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@sammcj/mcp-llm):
+
+```bash
+npx -y @smithery/cli install @sammcj/mcp-llm --client claude
 ```
 
-## Available Scripts
-
-- `npm run build` - Build the project
-- `npm run watch` - Watch for changes and rebuild
-- `npm start` - Start the MCP server
-- `npm run example` - Run the example script
-- `npm run inspector` - Run the MCP inspector
-
-## Configuration
-
-The MCP server is configurable using environment variables:
-
-### Required Environment Variables
-
-- `LLM_MODEL_NAME`: The name of the model to use (e.g., `qwen2-32b:q6_k`, `anthropic.claude-3-7-sonnet-20250219-v1:0`)
-- `LLM_MODEL_PROVIDER`: The model provider (e.g., `bedrock`, `ollama`, `openai`, `openai-compatible`)
-
-### Optional Environment Variables
-
-- `LLM_BASE_URL`: Base URL for the model provider (e.g., `https://ollama.internal`, `http://my-openai-compatible-server.com:3000/v1`)
-- `LLM_TEMPERATURE`: Temperature parameter for the model (e.g., `0.2`)
-- `LLM_NUM_CTX`: Context window size (e.g., `16384`)
-- `LLM_TOP_P`: Top-p parameter for the model (e.g., `0.85`)
-- `LLM_TOP_K`: Top-k parameter for the model (e.g., `40`)
-- `LLM_MIN_P`: Min-p parameter for the model (e.g., `0.05`)
-- `LLM_REPETITION_PENALTY`: Repetition penalty parameter for the model (e.g., `1.05`)
-- `LLM_SYSTEM_PROMPT_GENERATE_CODE`: System prompt for the generate_code tool
-- `LLM_SYSTEM_PROMPT_GENERATE_DOCUMENTATION`: System prompt for the generate_documentation tool
-- `LLM_SYSTEM_PROMPT_ASK_QUESTION`: System prompt for the ask_question tool
-- `LLM_TIMEOUT_S`: Timeout in seconds for LLM requests (e.g., `240` for 4 minutes)
-- `LLM_ALLOW_FILE_WRITE`: Set to `true` to allow the `generate_code_to_file` tool to write to files (default: `false`)
-- `OPENAI_API_KEY`: API key for OpenAI (required when using OpenAI provider)
-
-
-## Manual Install From Source
+### Manual Install From Source
 
 1. Clone the repository
 2. Install dependencies:
