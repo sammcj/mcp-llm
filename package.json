@@ -1,0 +1,67 @@
+{
+  "author": {
+    "name": "Sam McLeod",
+    "url": "https://smcleod.net"
+  },
+  "bin": {
+    "mcp-llm": "./build/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/sammcj/mcp-llm/issues"
+  },
+  "dependencies": {
+    "@llamaindex/community": "0.0.88",
+    "@llamaindex/ollama": "0.0.46",
+    "@llamaindex/openai": "0.1.58",
+    "@modelcontextprotocol/sdk": "1.6.1",
+    "llamaindex": "0.9.7"
+  },
+  "description": "MCP server for interacting with LLMs using LlamaIndexTS",
+  "devDependencies": {
+    "@types/node": "22.13.9",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/sammcj/mcp-llm#readme",
+  "keywords": [
+    "mcp",
+    "documentation",
+    "llm",
+    "ai",
+    "package",
+    "docs",
+    "llamaindex",
+    "sammcj",
+    "smcleod"
+  ],
+  "license": "MIT",
+  "main": "build/index.js",
+  "name": "mcp-llm",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sammcj/mcp-llm.git"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "bump": "npx -y standard-version --skip.tag && git add . ; git commit -m 'chore: bump version' ; git push",
+    "dev": "tsc && node build/index.js",
+    "example": "node examples/use-mcp-server.js",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "prepare": "npm run build",
+    "start": "node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}

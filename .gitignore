@@ -1,0 +1,9 @@
+node_modules
+.venv
+venv
+build/*
+dist/*
+*.tmp
+*.log
+*.pyc
+*.pyo

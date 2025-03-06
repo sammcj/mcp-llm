@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "llamaindex": {
+      "command": "node",
+      "args": [
+        "/path/to/mcp-llm/build/index.js"
+      ],
+      "env": {
+        "LLM_MODEL_NAME": "llama3",
+        "LLM_MODEL_PROVIDER": "ollama",
+        "LLM_BASE_URL": "http://localhost:11434",
+        "LLM_TEMPERATURE": "0.2",
+        "LLM_TOP_P": "0.85",
+        "LLM_TIMEOUT_S": "240",
+        "LLM_ALLOW_FILE_WRITE": "true",
+        "LLM_SYSTEM_PROMPT_GENERATE_CODE": "You are an expert programmer. Generate clean, efficient, and well-commented code based on the description provided.",
+        "LLM_SYSTEM_PROMPT_GENERATE_DOCUMENTATION": "You are a technical writer. Generate clear, comprehensive documentation for the provided code.",
+        "LLM_SYSTEM_PROMPT_ASK_QUESTION": "You are a helpful assistant. Provide accurate and informative answers to questions."
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
