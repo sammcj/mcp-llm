@@ -144,13 +144,6 @@ The `generate_code_to_file` tool supports both relative and absolute file paths.
 }
 ```
 
-## Recent Changes
-
-### v1.0.1
-- Renamed `LLM_TIMEOUT` environment variable to `LLM_TIMEOUT_S` to clarify that the timeout is measured in seconds
-- Improved file path handling for the `generate_code_to_file` tool to ensure proper resolution of both relative and absolute paths
-- Added detailed logging for file operations to help diagnose issues
-
 ## License
 
-ISC
+- [MIT LICENSE](LICENSE)
