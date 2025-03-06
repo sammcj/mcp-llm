@@ -2,6 +2,8 @@
 
 An MCP server that provides access to LLMs using the LlamaIndexTS library.
 
+![I put some LLMs in your MCP for your LLMs](legit.png)
+
 ## Features
 
 This MCP server provides the following tools:
