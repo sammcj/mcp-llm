@@ -18,17 +18,35 @@ This MCP server provides the following tools:
 
 ## Installation
 
-1. Clone the repository
-2. Install dependencies:
+Update your MCP config to add the mcp-llm server:
 
-```bash
-npm install
-```
-
-3. Build the project:
-
-```bash
-npm run build
+```json
+{
+  "mcpServers": {
+    "llm": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-llm"
+      ],
+      "env": {
+        "LLM_MODEL_NAME": "deepseek-r1:7b-qwen-distill-q6_k_l",
+        "LLM_MODEL_PROVIDER": "ollama",
+        "LLM_BASE_URL": "http://localhost:11434",
+        "LLM_ALLOW_FILE_WRITE": "true",
+        "LLM_TIMEOUT_S": "240"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "generate_code",
+        "generate_documentation",
+        "ask_question",
+        "generate_code_to_file"
+      ],
+      "timeout": 300
+    },
+  }
+}
 ```
 
 ## Available Scripts
@@ -64,13 +82,23 @@ The MCP server is configurable using environment variables:
 - `LLM_ALLOW_FILE_WRITE`: Set to `true` to allow the `generate_code_to_file` tool to write to files (default: `false`)
 - `OPENAI_API_KEY`: API key for OpenAI (required when using OpenAI provider)
 
-## Usage
 
-### Running the Server
+## Manual Install From Source
+
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm start
+npm install
 ```
+
+3. Build the project:
+
+```bash
+npm run build
+```
+
+4. Update your MCP configuration
 
 ### Using the Example Script
 
@@ -81,29 +109,6 @@ node examples/use-mcp-server.js
 ```
 
 This script starts the MCP server and sends requests to it using curl commands.
-
-### Using with Claude
-
-To use this MCP server with Claude, add it to your Claude MCP settings file:
-
-```json
-{
-  "mcpServers": {
-    "llamaindex": {
-      "command": "npx",
-      "args": ["-y", "mcp-llm"],
-      "env": {
-        "LLM_MODEL_NAME": "deepseek-r1:7b-qwen-distill-q6_k_l",
-        "LLM_MODEL_PROVIDER": "ollama",
-        "LLM_TIMEOUT_S": "240",
-        "LLM_ALLOW_FILE_WRITE": "true"
-      },
-      "disabled": false,
-      "autoApprove": []
-    }
-  }
-}
-```
 
 ## Examples
 
