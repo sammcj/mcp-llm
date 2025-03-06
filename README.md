@@ -11,6 +11,9 @@ This MCP server provides the following tools:
 - `generate_documentation`: Generate documentation for code
 - `ask_question`: Ask a question to the LLM
 
+![call a llm to generate code](screenshot1.png)
+![call a reasoning llm to write some documentation](screenshot2.png)
+
 ## Installation
 
 1. Clone the repository
