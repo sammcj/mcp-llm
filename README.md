@@ -85,10 +85,10 @@ To use this MCP server with Claude, add it to your Claude MCP settings file:
 {
   "mcpServers": {
     "llamaindex": {
-      "command": "node",
-      "args": ["/path/to/mcp-llm/build/index.js"],
+      "command": "npx",
+      "args": ["-y", "mcp-llm"],
       "env": {
-        "LLM_MODEL_NAME": "llama3",
+        "LLM_MODEL_NAME": "deepseek-r1:7b-qwen-distill-q6_k_l",
         "LLM_MODEL_PROVIDER": "ollama",
         "LLM_TIMEOUT_S": "240",
         "LLM_ALLOW_FILE_WRITE": "true"
