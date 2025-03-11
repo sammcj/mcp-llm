@@ -2,6 +2,8 @@
 
 An MCP server that provides access to LLMs using the LlamaIndexTS library.
 
+![I put some LLMs in your MCP for your LLMs](legit.png)
+
 <a href="https://glama.ai/mcp/servers/i1gantlfrs">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/i1gantlfrs/badge" alt="mcp-llm MCP server" />
 </a>
